@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
             <div className="relative border-[6px] border-blue-600 bg-blue-950/80 p-2 shadow-[12px_12px_0_0_rgba(0,0,0,0.5)]">
                 <div className="absolute top-2 left-2 right-2 flex justify-between z-20">
                     <span className="bg-red-600 text-white text-[10px] px-2 py-1 border border-white">P1</span>
-                    <span className="text-yellow-400 animate-pulse">Lv.32</span>
+                    <span className="text-yellow-400 animate-pulse">Lv.30</span>
                 </div>
                 
                 {/* IMAGE PLACEHOLDER - Pastikan file axcell-ranger.png ada di folder public */}
@@ -96,11 +96,11 @@ const HeroSection: React.FC = () => {
                 <div>
                     <div className="flex justify-between mb-1 text-gray-300">
                         <span>WISDOM (AGE)</span>
-                        <span className="text-yellow-400">32 / 100</span>
+                        <span className="text-yellow-400">30 / 100</span>
                     </div>
                     <div className="h-4 bg-gray-800 border border-gray-600 relative overflow-hidden">
                         <motion.div 
-                            custom={32} 
+                            custom={30} 
                             variants={barVariants} 
                             initial="hidden" 
                             animate="visible"

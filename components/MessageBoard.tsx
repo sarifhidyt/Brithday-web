@@ -32,11 +32,11 @@ const MessageBoard: React.FC = () => {
 
                 <div className="space-y-6 text-sm sm:text-base leading-relaxed text-gray-200 font-mono">
                     <p>
-                        <span className="text-blue-400 font-bold text-lg">MISSION UPDATE: LEVEL 32 REACHED!</span>
+                        <span className="text-blue-400 font-bold text-lg">MISSION UPDATE: LEVEL 30 REACHED!</span>
                     </p>
                     <p>
                         Happy Birthday, Ranger Axcell! Another year of defending the universe from boredom and sadness has been successfully completed. 
-                        Your transformation into Level 32 brings new powers and wisdom.
+                        Your transformation into Level 30 brings new powers and wisdom.
                     </p>
                     <p>
                         We are incredibly grateful for your heroism, kindness, and the joy you bring to our squad.

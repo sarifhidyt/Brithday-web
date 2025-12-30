@@ -70,7 +70,7 @@ const SleepSection: React.FC = () => {
                         <div className="absolute inset-0 bg-black/20 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
                         
                         <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-green-400 text-[10px] p-2 font-mono text-left">
-                            > STATUS: DREAMING OF CAKE...
+                            &gt; STATUS: DREAMING OF CAKE...
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const SleepSection: React.FC = () => {
                          <div className="absolute inset-0 bg-black/20 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
 
                          <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-yellow-400 text-[10px] p-2 font-mono text-left">
-                            > WARNING: LOW BATTERY
+                            &gt; WARNING: LOW BATTERY
                         </div>
                     </div>
                 </div>
@@ -116,12 +116,12 @@ const SleepSection: React.FC = () => {
         <div className="mt-12 flex flex-col items-center justify-center">
             <div className="flex items-center gap-2 text-green-400 mb-2 animate-pulse">
                 <BatteryCharging size={24} />
-                <span className="text-sm">RECHARGING: 32% COMPLETE</span>
+                <span className="text-sm">RECHARGING: 30% COMPLETE</span>
             </div>
             <div className="w-64 h-4 bg-gray-800 border-2 border-gray-600 p-0.5 rounded-full overflow-hidden">
                 <motion.div 
                     initial={{ width: "0%" }}
-                    whileInView={{ width: "32%" }}
+                    whileInView={{ width: "30%" }}
                     transition={{ duration: 2 }}
                     className="h-full bg-green-500 rounded-full"
                 ></motion.div>

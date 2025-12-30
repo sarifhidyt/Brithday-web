@@ -5,7 +5,7 @@ import { Play, RotateCcw, Trophy, ChevronUp, ChevronDown, ChevronLeft, ChevronRi
 
 const GRID_SIZE = 20;
 const INITIAL_SPEED = 150;
-const WINNING_SCORE = 320; // 10 items x 32 points
+const WINNING_SCORE = 300; // 10 items x 30 points
 
 const SnakeGame: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>({
@@ -113,7 +113,7 @@ const SnakeGame: React.FC = () => {
 
       // Check food
       if (newHead.x === prev.food.x && newHead.y === prev.food.y) {
-        newScore += 32; // Special Birthday Score increment
+        newScore += 30; // Special Birthday Score increment for age 30
         
         // WIN CONDITION
         if (newScore >= WINNING_SCORE) {
@@ -206,7 +206,7 @@ const SnakeGame: React.FC = () => {
                <div className="animate-bounce">
                   <PartyPopper className="text-yellow-400 w-12 h-12 mx-auto mb-2" />
                   <h3 className="text-yellow-400 mb-2 text-lg sm:text-xl">MISSION COMPLETE!</h3>
-                  <p className="text-green-400 text-xs mb-4">LEVEL 32 UNLOCKED</p>
+                  <p className="text-green-400 text-xs mb-4">LEVEL 30 UNLOCKED</p>
                   <p className="text-white text-[10px] mb-6 leading-relaxed">
                     Amazing reflexes, Ranger! <br/>
                     You have successfully navigated another year.<br/>
@@ -221,7 +221,7 @@ const SnakeGame: React.FC = () => {
                   <p className="text-gray-400 text-[10px] mb-4">GAME OVER?</p>
                   <p className="text-white text-[10px] mb-6 leading-relaxed max-w-[250px] mx-auto">
                     Even when you hit a wall, you're still a winner to us!<br/>
-                    Don't give up on Level 32.<br/>
+                    Don't give up on Level 30.<br/>
                     <span className="text-yellow-400">Keep shining, Birthday Boy! ✨</span>
                   </p>
                </div>
@@ -290,7 +290,7 @@ const SnakeGame: React.FC = () => {
       <div className="hidden sm:flex mt-4 text-xs text-gray-500 gap-4">
         <span>[ARROWS] to Move</span>
         <span>•</span>
-        <span>Goal: 320 PTS</span>
+        <span>Goal: {WINNING_SCORE} PTS</span>
       </div>
     </div>
   );
