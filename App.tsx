@@ -43,7 +43,7 @@ const App: React.FC = () => {
         <MessageBoard />
 
         <footer className="py-10 text-center text-gray-600 text-[10px]">
-          <p>© 2024 AXCELL'S 32ND BIRTHDAY EDITION</p>
+          <p>© 2024 AXCELL'S 30TH BIRTHDAY EDITION</p>
           <p className="mt-2">MADE WITH LOVE</p>
         </footer>
       </main>
