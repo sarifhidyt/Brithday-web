@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import HeroSection from './components/HeroSection';
 import SnakeGame from './components/SnakeGame';
 import GallerySection from './components/GallerySection';
@@ -8,6 +8,27 @@ import { Volume2, VolumeX } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isMuted, setIsMuted] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Handle audio play/pause
+  useEffect(() => {
+    if (audioRef.current) {
+      if (!isMuted) {
+        // User wants sound
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log("Audio autoplay prevented:", error);
+            // Revert state if autoplay is blocked
+            setIsMuted(true);
+          });
+        }
+      } else {
+        // User wants mute
+        audioRef.current.pause();
+      }
+    }
+  }, [isMuted]);
 
   return (
     <div className="min-h-screen bg-[#111] text-white selection:bg-pink-500 selection:text-white">
@@ -15,12 +36,22 @@ const App: React.FC = () => {
       <div className="scanlines"></div>
       <div className="crt-flicker"></div>
 
-      {/* Audio Toggle (Visual only for this demo) */}
+      {/* 
+        Background Music 
+        PENTING: Masukkan file 'music.mp3' ke dalam folder public Anda.
+        Bisa gunakan lagu 8-bit atau chiptune agar sesuai tema.
+      */}
+      <audio ref={audioRef} loop src="/music.mp3" />
+
+      {/* Audio Toggle */}
       <button 
         onClick={() => setIsMuted(!isMuted)}
-        className="fixed top-4 right-4 z-50 bg-black border-2 border-green-500 p-2 text-green-500 hover:bg-green-900 transition-colors"
+        className="fixed top-4 right-4 z-50 bg-black border-2 border-green-500 p-2 text-green-500 hover:bg-green-900 transition-colors flex items-center gap-2"
       >
         {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+        <span className="hidden sm:inline text-xs font-mono">
+            {isMuted ? "MUSIC OFF" : "MUSIC ON"}
+        </span>
       </button>
 
       {/* Main Content */}
