@@ -5,12 +5,9 @@ import PixelButton from './PixelButton';
 
 // PENTING: Masukkan foto ke folder 'public' dan ganti nama file di bawah ini
 const photos = [
-  "/galeri1.jpg", // Ganti dengan nama file foto Anda di folder public
+  "/galeri1.jpg", 
   "/galeri2.jpg",
-  "/galeri3.jpg",
-  // Tambahkan baris baru jika foto lebih banyak
-  "https://picsum.photos/800/600?random=1", // Ini contoh placeholder (bisa dihapus)
-  "https://picsum.photos/800/600?random=2", // Ini contoh placeholder (bisa dihapus)
+  "/galeri3.jpg"
 ];
 
 const GallerySection: React.FC = () => {
@@ -50,7 +47,10 @@ const GallerySection: React.FC = () => {
   };
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = "https://placehold.co/800x600/1f2937/white?text=Add+Photo+To+Public+Folder";
+     const img = e.currentTarget;
+     const src = img.getAttribute('src') || 'unknown';
+     // Menampilkan nama file yang hilang agar user bisa cek nama filenya
+     img.src = `https://placehold.co/800x600/1f2937/red?text=MISSING:+${src.replace('/', '')}`;
   };
 
   return (
@@ -64,7 +64,6 @@ const GallerySection: React.FC = () => {
             <ImageIcon className="w-8 h-8" />
             <span>MEMORY ARCHIVE</span>
           </h2>
-          {/* Technical text removed here */}
         </div>
 
         {/* Main Viewer Frame */}

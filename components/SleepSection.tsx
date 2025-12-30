@@ -4,7 +4,10 @@ import { BatteryCharging, Moon, ZapOff } from 'lucide-react';
 
 const SleepSection: React.FC = () => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = "https://placehold.co/600x800/1f2937/white?text=Insert+Photo+In+Public+Folder";
+     const img = e.currentTarget;
+     const src = img.getAttribute('src') || 'unknown';
+     // Menampilkan nama file yang hilang agar user bisa cek nama filenya
+     img.src = `https://placehold.co/600x800/1f2937/red?text=MISSING:+${src.replace('/', '')}`;
   };
 
   return (
@@ -70,7 +73,7 @@ const SleepSection: React.FC = () => {
                         <div className="absolute inset-0 bg-black/20 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
                         
                         <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-green-400 text-[10px] p-2 font-mono text-left">
-                            &gt; STATUS: DREAMING OF CAKE...
+                            {'>'} STATUS: DREAMING OF CAKE...
                         </div>
                     </div>
                 </div>
@@ -104,7 +107,7 @@ const SleepSection: React.FC = () => {
                          <div className="absolute inset-0 bg-black/20 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
 
                          <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-yellow-400 text-[10px] p-2 font-mono text-left">
-                            &gt; WARNING: LOW BATTERY
+                            {'>'} WARNING: LOW BATTERY
                         </div>
                     </div>
                 </div>
