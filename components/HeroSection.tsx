@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Gamepad2, Zap, Shield, Star } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   // Stats animation variants
-  const barVariants = {
+  const barVariants: Variants = {
     hidden: { width: 0 },
     visible: (custom: number) => ({
       width: `${custom}%`,

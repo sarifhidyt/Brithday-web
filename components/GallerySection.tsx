@@ -3,11 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Image as ImageIcon, Maximize2 } from 'lucide-react';
 import PixelButton from './PixelButton';
 
-// PENTING: Masukkan foto ke folder 'public' dan ganti nama file di bawah ini
+// UPDATE: Menambahkan lebih banyak slot foto dan kembali ke format .jpg
+// Pastikan file Anda di folder public bernama: galeri1.jpg, galeri2.jpg, dst.
 const photos = [
   "/galeri1.jpg", 
   "/galeri2.jpg",
-  "/galeri3.jpg"
+  "/galeri3.jpg",
+  "/galeri4.jpg", // Tambahkan file ini di folder public
+  "/galeri5.jpg", // Tambahkan file ini di folder public
+  "/galeri6.jpg"  // Tambahkan file ini di folder public
 ];
 
 const GallerySection: React.FC = () => {
@@ -49,7 +53,8 @@ const GallerySection: React.FC = () => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
      const img = e.currentTarget;
      const src = img.getAttribute('src') || 'unknown';
-     // Menampilkan nama file yang hilang agar user bisa cek nama filenya
+     // Visual error yang lebih jelas
+     img.style.border = '2px dashed red';
      img.src = `https://placehold.co/800x600/1f2937/red?text=MISSING:+${src.replace('/', '')}`;
   };
 

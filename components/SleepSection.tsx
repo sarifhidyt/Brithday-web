@@ -6,7 +6,8 @@ const SleepSection: React.FC = () => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
      const img = e.currentTarget;
      const src = img.getAttribute('src') || 'unknown';
-     // Menampilkan nama file yang hilang agar user bisa cek nama filenya
+     // Fallback visual yang jelas jika gambar error
+     img.style.border = '2px dashed red';
      img.src = `https://placehold.co/600x800/1f2937/red?text=MISSING:+${src.replace('/', '')}`;
   };
 
@@ -63,6 +64,7 @@ const SleepSection: React.FC = () => {
                 </div>
                 <div className="bg-gray-800 p-3 border-4 border-gray-600 shadow-[10px_10px_0_0_rgba(255,255,255,0.1)]">
                     <div className="relative overflow-hidden aspect-[3/4]">
+                        {/* UPDATE: Kembali ke .jpg */}
                         <img 
                             src="/sleep1.jpg" 
                             alt="Axcell Sleeping 1" 
@@ -97,6 +99,7 @@ const SleepSection: React.FC = () => {
 
                 <div className="bg-gray-800 p-3 border-4 border-gray-600 shadow-[10px_10px_0_0_rgba(255,255,255,0.1)]">
                     <div className="relative overflow-hidden aspect-[3/4]">
+                        {/* UPDATE: Kembali ke .jpg */}
                         <img 
                             src="/sleep2.jpg" 
                             alt="Axcell Sleeping 2" 
